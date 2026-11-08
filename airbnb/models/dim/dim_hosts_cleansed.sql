@@ -1,12 +1,9 @@
-{#
-  You might have `view` as the materialization as we only 
-  replace `materialized` with `table` when we implement constraints. 
-#}
 {{
-  config(
-    materialized = 'table' 
-    )
-}} 
+    config(
+        materialized='table'
+    ) 
+}}
+
 WITH src_hosts AS (
     SELECT
         *

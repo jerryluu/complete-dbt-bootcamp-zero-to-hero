@@ -1,13 +1,16 @@
 {{
-  config(
-    materialized = 'view',
-    event_time='created_at'
-  )
-}} 
+    config(
+        materialized='table'
+    ) 
+}}
+
 WITH src_listings AS (
-    SELECT * FROM {{ ref('src_listings') }}
+  SELECT
+    *
+  FROM
+    {{ ref('src_listings') }}
 )
-SELECT 
+SELECT
   listing_id,
   listing_name,
   room_type,
